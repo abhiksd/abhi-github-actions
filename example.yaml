@@ -1,0 +1,17 @@
+config:
+  path: dataf/file.txt
+  destination: path
+
+colors:
+  - red
+  - black
+  - green
+  - 10
+  - name: job name
+    action: ok
+
+
+Building blocks github actions:
+workflow
+ jobs
+    steps
