@@ -1,8 +1,8 @@
 name: 07 - Using Expressions
-run-name : 07 - Using Expressions | Debug - ${{ inputs.debug && 'ON' || 'OFF' }}
+run-name: 07 - Using Expressions | DEBUG - ${{ inputs.debug && 'ON' || 'OFF' }}
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
     inputs:
       debug:
         type: boolean
@@ -17,14 +17,10 @@ jobs:
         run: |
           echo "Triggered by: ${{ github.event_name }}"
           echo "Branch: ${{ github.ref }}"
-          echo "Commit SHA: ${{ github.SHA }}"
-          echo "Runner OS: ${{ runner.OS }}"
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "Runner OS: ${{ runner.os }}"
       - name: '[debug] Print when triggered from main'
-        if: inputs.debug && github.ref == 'refs/head/main'
+        if: inputs.debug && github.ref == 'refs/heads/main'
         run: echo "I was triggered from main"
       - name: Greeting
-        run: echo "Done!!"
-
-        
-
-
+        run: echo "Hello, world"
